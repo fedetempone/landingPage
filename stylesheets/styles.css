@@ -2,9 +2,43 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
 }
 
 #container{
     width: 80%;
     margin: 0px auto;
+}
+
+#container img{
+    height: 30%;
+    width: 30%;
+    margin: 1.4%;
+}
+
+#container h1{
+    width: 50%;
+    margin-left: 1.4%;
+    font-size: 40px;
+    border-bottom: 2px solid red;
+    padding: 5px 0px 5px 0px;
+}
+
+.contacto {
+    height: 100%;
+    background-color: rgba(54, 53, 53, 0.856);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.contacto a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    color: red;
+    font-weight: 100;
+}
+
+.contacto  a:hover{
+    color: black;
 }
