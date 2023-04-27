@@ -3,11 +3,16 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Anton', sans-serif;
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100vh;
 }
 
 #container{
     width: 80%;
     margin: 0px auto;
+    position: relative;
 }
 
 #container img{
@@ -16,7 +21,7 @@ body{
     margin: 1.4%;
 }
 
-#container h1{
+#container h2{
     width: 50%;
     margin-left: 1.4%;
     font-size: 40px;
@@ -24,21 +29,178 @@ body{
     padding: 5px 0px 5px 0px;
 }
 
+#container a img{
+    overflow: hidden;
+}
+
+#container a img:hover{
+    -webkit-transform:scale(1.3);
+    transform:scale(1.3);
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.principal {
+    min-height: 80vh;
+}
+
 .contacto {
     height: 100%;
-    background-color: rgba(54, 53, 53, 0.856);
+    background-color: #1c1d1e;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 
 .contacto a{
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    color: red;
+    color: white;
     font-weight: 100;
 }
 
 .contacto  a:hover{
-    color: black;
+    color: red;
+}
+
+.imagenRaulGarcia img{
+    height: 100px;
+    width: 100px;
+    border-radius: 54px;
+}
+
+.imagenRaulGarcia  h3{
+    color: white;
+    font-family: cursive;
+}
+
+.imagenFotografo h1{
+    position: absolute;
+    color: white;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+    font-family: cursive;
+}
+.imagenFotografo img{
+    width: 100%;
+}
+
+/*ESTILOS PARA LA BARRA DE NAVEGACION*/
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    background-color: #1c1d1e;
+    max-height: 80px;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navBar a{
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+
+.rgLogo{
+    height: 78px;
+    width: 212px;
+}
+
+
+.topHeader{  
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.openMenu{
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 15px;
+    filter: invert(99%) sepia(2%) saturate(43%) hue-rotate(218deg) brightness(116%) contrast(100%);
+}
+
+.closeMenu {
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 36px 67px;
+}
+
+
+/*MEDIA QUERY*/
+
+@media (max-width: 800px){
+
+    .menu{
+        flex-direction: column;
+        position: fixed;
+        margin: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        align-items: center;
+        background-color: #1c1d1e;
+        height: 100%;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    .menuOpened{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .menu a{
+        line-height: 60px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+}
+ 
+
+@media (min-width: 800px){
+    .openMenu , .closeMenu{
+        display: none;
+    }
+    
+    .navBar a:hover{
+        color: red;
+    }
+}    
+  
+
+@media (max-width: 400px){
+    .navBar{
+        flex-direction: column;
+        align-items: center;
+        max-height: 150px;
+    }
+
+    .imagenFotografo h1{
+        font-size: 10px;
+        top: 155px;
+    }
+
+    #container h2{
+        font-size: 1.5em;
+    }
 }
